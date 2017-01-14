@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import '../App.css';
+import $ from 'jquery';
+import {Panel, Jumbotron, ListGroup, ListGroupItem, Grid, Row, Col} from 'react-bootstrap';
 
-class Exercises extends Component {
+class Exercise extends Component {
   render() {
     return (
-      <div className="Exercise">
-        Exercises
+      <div className="App">
+        Exer
       </div>
     );
   }
 }
 
-export default Exercises;
+export default Exercise;

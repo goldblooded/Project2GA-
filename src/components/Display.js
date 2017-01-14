@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import '../App.css';
-import $ from 'jquery';
 
 class Workout extends Component {
   render() {
     return (
-        <div className="App">
-        </div>
+      <div className="Workout">
+        Workout
+      </div>
     );
   }
 }
