@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import '../App.css';
-import $ from 'jquery';
+import Header from './Header';
+import Menu from './Menu';
+import Display from './Display';
 
 class Workout extends Component {
   render() {
     return (
-        <div className="App">
+        <div className="Workout">
+          <Header />
+          <Menu />
+          <h1> Todays Workout Page </h1>
         </div>
     );
   }

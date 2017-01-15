@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import Header from './Header';
+import Menu from './Menu';
 import '../App.css';
-import $ from 'jquery';
-import {Panel, Jumbotron, ListGroup, ListGroupItem, Grid, Row, Col} from 'react-bootstrap';
 
 class Exercise extends Component {
   render() {
     return (
-      <div className="App">
-        Exer
+      <div className="Exercise">
+        <Header />
+        <Menu />
+        <h1> Tbis is the Exercise List page </h1>
       </div>
     );
   }

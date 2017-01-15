@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import $ from 'jquery';
-import {Panel, Jumbotron, ListGroup, ListGroupItem, Grid, Row, Col} from 'react-bootstrap';
-import Display from './components/Disp';
+import Workout from './components/Workout';
+import Exercise from './components/Exercise';
+import { BrowserRouter, Match, Miss } from 'react-router';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Jumbotron>
-            <h1> Your Workout App </h1>
-            <p> Use this app to keep track of and create your daily workouts. </p>
-        </Jumbotron>
-        <Disp />
-      </div>
+      <BrowserRouter>
+
+        <div className="App">
+          <div className="redirects">
+            <Match
+              exactly pattern="/"
+              component={() => <Workout />}
+            />
+            <Match
+              exactly pattern="/ExerciseList"
+              component={() => <Exercise /> }
+            />
+          </div>
+        </div>
+
+      </BrowserRouter>
     );
   }
 }
