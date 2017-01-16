@@ -13,24 +13,26 @@ class Main extends Component {
       workoutList : []
     };
   }
+
   componentDidMount() {
     axios.get(FIREBASE_URL).then((response) => {
-      let workoutList = this.state.workoutList;
-      console.log(response.data.keys);
-      response.data.keys.map((elem, i) => {
-        elem.id = i;
-        workoutList.push(elem);
-      })
+      let workoutList = [];
+      Object.keys(response.data).map((elem, i) => {
+        workoutList.push(response.data[elem]);
+      });
+
       this.setState({ workoutList : workoutList });
     }).catch((error) => { console.log(error); });
   }
 
   render() {
-    return ( 
+    console.log("HERE"); console.log(this.state.workoutList);
+    return (
       <Grid>
         <Row className='show-grid'>
           <Col sm={6}>
             <WorkoutList children={this.state.workoutList}/>
+            }
           </Col>
           <Col sm={6}>
             <NewWorkout />

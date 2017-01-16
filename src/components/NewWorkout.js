@@ -14,55 +14,55 @@ class NewWorkout extends Component {
       intensity : this.intensity.value,
       distance : this.distance.value
     }).then((response) => {
-      alert(response); 
+      alert(response);
     }).catch((error) => {
       alert(error);
     });
-    
+
   }
   render() {
     return (
       <Panel header="Add a new workout to your list!">
         <Form horizontal>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={2}>
-               Title
-            </Col>
-            <Col sm={10}>
+         <FormGroup>
+          <Col componentClass={ControlLabel} sm={2}>
+            Title
+          </Col>
+          <Col sm={10}>
                 <FormControl inputRef={(ref) => {this.title=ref}} placeholder="Title" />
-            </Col>
+          </Col
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2}>
-                Intensity
-            </Col>
-            <Col sm={10}>
+           <Col componentClass={ControlLabel} sm={2}>
+              Intensity
+           </Col>
+           <Col sm={10}>
               <FormControl  inputRef={(ref) => {this.intensity=ref}} placeholder="Intensity" />
-            </Col>
+           </Col>
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2}>
+           <Col componentClass={ControlLabel} sm={2}>
               Distance
-            </Col>
-            <Col sm={10}>
-              <FormControl inputRef={(ref) => {this.distance=ref}} placeholder="Distance" />
-            </Col>
+           </Col>
+           <Col sm={10}>
+             <FormControl inputRef={(ref) => {this.distance=ref}} placeholder="Distance" />
+           </Col>
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2}>
+           <Col componentClass={ControlLabel} sm={2}>
               Duration
-            </Col>
+           </Col>
             <Col sm={10}>
               <FormControl  inputRef={(ref) => {this.duration=ref}} placeholder="Duration" />
-            </Col>
+           </Col>
           </FormGroup>
         </Form>
 
         <ButtonToolbar>
-          <Button bsStyle="success" onClick={this.onClick.bind(this)} > 
+          <Button bsStyle="success" onClick={this.onClick.bind(this)} >
             Add
           </Button>
         </ButtonToolbar>
