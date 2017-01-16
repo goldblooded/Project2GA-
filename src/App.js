@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
-import Workout from './components/Workout';
-import Exercise from './components/Exercise';
 import { BrowserRouter, Match, Miss } from 'react-router';
+import Quotes from './components/Quotes';
+import Main from './components/Main';
+import Header from './components/Header';
 
 class App extends Component {
   render() {
@@ -10,14 +10,15 @@ class App extends Component {
       <BrowserRouter>
 
         <div className="App">
+          <Header />
           <div className="redirects">
             <Match
               exactly pattern="/"
-              component={() => <Workout />}
+              component={() => <Main/> }
             />
             <Match
-              exactly pattern="/ExerciseList"
-              component={() => <Exercise /> }
+              exactly pattern="/Quotes"
+              component={() => <Quotes/> }
             />
           </div>
         </div>
