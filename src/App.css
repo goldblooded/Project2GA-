@@ -19,8 +19,9 @@
 }
 
 .menu--button-toolbar {
-  margin-left: auto;
-  margin-right: auto;
+/*  margin-left: auto;
+  margin-right: auto;*/
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

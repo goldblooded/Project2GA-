@@ -18,28 +18,31 @@ class Main extends Component {
     axios.get(FIREBASE_URL).then((response) => {
       let workoutList = [];
       Object.keys(response.data).map((elem, i) => {
+        response.data[elem].id = elem;
         workoutList.push(response.data[elem]);
       });
-
       this.setState({ workoutList : workoutList });
     }).catch((error) => { console.log(error); });
   }
 
+  addChild(newChild) {
+    let currentworkoutList = this.state.workoutList;
+    currentworkoutList.push(newChild);
+    this.setState({workoutList : currentworkoutList});
+  }
+
   render() {
-    console.log("HERE"); console.log(this.state.workoutList);
     return (
       <Grid>
         <Row className='show-grid'>
           <Col sm={6}>
             <WorkoutList children={this.state.workoutList}/>
-            }
           </Col>
           <Col sm={6}>
-            <NewWorkout />
+            <NewWorkout newChild={this.addChild.bind(this)}/>
           </Col>
         </Row>
       </Grid>
-
     );
   }
 

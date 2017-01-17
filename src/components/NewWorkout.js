@@ -8,16 +8,24 @@ const FIREBASE_URL = 'https://workout-app-89f1f.firebaseio.com/.json'
 
 class NewWorkout extends Component {
   onClick() {
-    axios.post(FIREBASE_URL, {
+    let newWorkout = {
       title : this.title.value,
       duration : this.duration.value,
       intensity : this.intensity.value,
       distance : this.distance.value
-    }).then((response) => {
-      alert(response);
+    };
+    axios.post(FIREBASE_URL, newWorkout).then((response) => {
+      console.log(response);
+      newWorkout.id = response.data.name;
+      this.props.newChild(newWorkout);
     }).catch((error) => {
       alert(error);
     });
+
+    this.title.value ="";
+    this.duration.value="";
+    this.intensity.value="";
+    this.distance.value="";
 
   }
   render() {
@@ -30,7 +38,7 @@ class NewWorkout extends Component {
           </Col>
           <Col sm={10}>
                 <FormControl inputRef={(ref) => {this.title=ref}} placeholder="Title" />
-          </Col
+          </Col>
           </FormGroup>
 
           <FormGroup>

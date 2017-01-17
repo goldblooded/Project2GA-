@@ -1,43 +1,58 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Panel, Col, Well, ButtonToolbar, Button } from 'react-bootstrap';
+import axios from 'axios';
+
+const FIREBASE_URL = 'https://workout-app-89f1f.firebaseio.com/';
 
 class Workout extends Component {
+  removeWorkout() {
+    let url = FIREBASE_URL + this.props.id + '/.json';
+
+    axios.delete(url).then(() => {
+      console.log('deleted ' + this.props.id);
+    }).catch((error) => { console.log(error)});
+
+    this.props.liveChildren(this.props.id);
+
+  }
   render() {
     return (
       <div className="workout" >
-          <Col sm={2}>
-              Title
-          </Col>
-          <Col sm={10}>
-              <Well bsSize="small"> {this.props.fields.title} </Well>
-          </Col>
+        <Panel>
+            <Col sm={2}>
+                Title
+            </Col>
+            <Col sm={10}>
+                <Well bsSize="small"> {this.props.fields.title} </Well>
+            </Col>
 
-          <Col sm={2}>
-              Distance
-          </Col>
-          <Col sm={10}>
-              <Well bsSize="small"> {this.props.fields.distance} </Well>
-          </Col>
+            <Col sm={2}>
+                Distance
+            </Col>
+            <Col sm={10}>
+                <Well bsSize="small"> {this.props.fields.distance} </Well>
+            </Col>
 
-          <Col sm={2}>
-              Duration
-          </Col>
-          <Col sm={10}>
-              <Well bsSize="small"> {this.props.fields.duration} </Well>
-          </Col>
+            <Col sm={2}>
+                Duration
+            </Col>
+            <Col sm={10}>
+                <Well bsSize="small"> {this.props.fields.duration} </Well>
+            </Col>
 
-          <Col sm={2}>
-              Intensity
-          </Col>
-          <Col sm={10}>
-              <Well bsSize="small"> {this.props.fields.intensity} </Well>
-          </Col>
+            <Col sm={2}>
+                Intensity
+            </Col>
+            <Col sm={10}>
+                <Well bsSize="small"> {this.props.fields.intensity} </Well>
+            </Col>
 
-          <ButtonToolbar>
-              <Button bsStyle="info"> Edit </Button> { /* setting bsStyle=info renders blue button */}
-              <Button bsStyle="danger"> Delete </Button> { /* setting bsStyle=red renders red button */}
-          </ButtonToolbar>
+            <ButtonToolbar>
+                <Button bsStyle="info" ref="edit"> Edit </Button>
+                <Button bsStyle="danger" ref="delete" onClick={this.removeWorkout.bind(this)}> Delete </Button>
+            </ButtonToolbar>
+          </Panel>
       </div>
     );
   }

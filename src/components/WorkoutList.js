@@ -1,36 +1,53 @@
 import React, { Component } from 'react';
-import { Panel, ListGroup, ListGroupItem} from 'react-bootstrap';
+import { Well, Panel, ListGroup, ListGroupItem} from 'react-bootstrap';
 import Workout from './Workout';
 
 class WorkoutList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      renderData : (<p> Loading ... </p>)
+      children : props.children
     };
-
   }
 
-  componentWillUpdate(newProps) {
-    let workouts = newProps.children;
-    console.log(workouts);
-    let renderData = workouts.map((elem, i) => {
-      return (<Workout fields={elem} />);
+  componentWillReceiveProps(newProps) {
+    if (!this.state || newProps.children !== this.state.children) {
+      this.setState({ children : newProps.children});
+    }
+  }
+
+  rerenderChildren(deletedChildId) {
+    let remainingChildren = this.state.children.filter((elem, i) => {
+      return elem.id !== deletedChildId;
     });
-    this.setState({renderData : renderData});
+
+    this.setState({children : remainingChildren});
+    console.log("JERE");
   }
 
+  renderWorkoutComponent() {
+    if (this.state.children.length === 0) {
+      return (
+        <Well>
+          <p> Huh... looks like you haven't added any workout items </p>
+        </Well>
+      );
+    }
+    else {
+      console.log(this.state.children);
+      let renderData = this.state.children.map((elem, i) => {
+        return (<Workout key={i} id={elem.id} fields={elem} liveChildren={this.rerenderChildren.bind(this)}/>);
+      });
+      return renderData;
+    }
+  }
   render() {
     return (
       <Panel header='Workout List'>
-        <ListGroup>
-          <ListGroupItem>
-            {this.state.renderData}
-          </ListGroupItem>
-      </ListGroup>
-    </Panel>
-  )
-}
+        {this.renderWorkoutComponent()}
+      </Panel>
+    );
+  }
 }
 
 export default WorkoutList;
