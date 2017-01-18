@@ -14,7 +14,7 @@ class WorkoutList extends Component {
   componentWillReceiveProps(newProps) {
     // if the current state is not set or if the new props that we received
     // is NOT equal to the current state (this means that the array of children has changed)
-    // then update the current state to be the new updated children. Necessary as
+    // then update the current state to be the new updated children. Needed to do this as
     // (componentWillReceiveProps) was called too many times and crashed the app.
     // From React documentation: you cannot call this.setState() here.
     // If you need to update state in response to a prop change, use componentWillReceiveProps() instead.

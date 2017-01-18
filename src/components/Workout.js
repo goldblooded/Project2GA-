@@ -16,6 +16,22 @@ class Workout extends Component {
     this.props.deleteChild(this.props.id);
 
   }
+
+  // editWorkout() {
+  //   const url = FIREBASE_URL + this.props.id + '/.json';
+  //   axios.patch(url, {
+  //     Title: this.state.title,
+  //     Intensity: this.state.intensity,
+  //   }).then((response) => {
+  //     console.log(response);
+  //   }).catch((error) => {
+  //     console.log(error);
+  //   });
+  // }
+
+  // edit button on click code for button toolbar
+// {onClick={this.editWorkout.bind(this)}
+
   render() {
     return (
       <div className="workout" >
