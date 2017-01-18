@@ -8,12 +8,12 @@ const FIREBASE_URL = 'https://workout-app-89f1f.firebaseio.com/';
 class Workout extends Component {
   removeWorkout() {
     let url = FIREBASE_URL + this.props.id + '/.json';
-
     axios.delete(url).then(() => {
       console.log('deleted ' + this.props.id);
     }).catch((error) => { console.log(error)});
-
-    this.props.liveChildren(this.props.id);
+    // Lifting state - - telling the parent (WorkoutList) to remove the item with this.props.id
+    // tell parent in this list of items you have remove this.props.id. From Erik's React lesson.
+    this.props.deleteChild(this.props.id);
 
   }
   render() {
@@ -47,7 +47,6 @@ class Workout extends Component {
             <Col sm={10}>
                 <Well bsSize="small"> {this.props.fields.intensity} </Well>
             </Col>
-
             <ButtonToolbar>
                 <Button bsStyle="info" ref="edit"> Edit </Button>
                 <Button bsStyle="danger" ref="delete" onClick={this.removeWorkout.bind(this)}> Delete </Button>

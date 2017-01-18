@@ -14,6 +14,7 @@ class Main extends Component {
     };
   }
 
+// object dot keys. take each data. response has other fields. but we just want response.data.
   componentDidMount() {
     axios.get(FIREBASE_URL).then((response) => {
       let workoutList = [];
@@ -26,9 +27,12 @@ class Main extends Component {
   }
 
   addChild(newChild) {
-    let currentworkoutList = this.state.workoutList;
-    currentworkoutList.push(newChild);
-    this.setState({workoutList : currentworkoutList});
+    let workoutList = this.state.workoutList;
+    // adds new workout to workoutList
+    workoutList.push(newChild);
+    // set state after new item added
+    this.setState({workoutList : workoutList});
+    // render called again
   }
 
   render() {

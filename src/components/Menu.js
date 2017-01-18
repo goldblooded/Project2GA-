@@ -9,7 +9,7 @@ class Menu extends Component {
       <ButtonToolbar className="menu--button-toolbar">
         <ButtonGroup bsSize="large">
             <Button>
-              <Link style={{textDecoration: 'none'}} to={`/`}> Workouts </Link>
+              <Link style={{textDecoration: 'none'}} to={`/`}> Home </Link>
             </Button>
             <Button>
               <Link style={{textDecoration: 'none'}} to={`/Quotes`}> Motivate Me! </Link>

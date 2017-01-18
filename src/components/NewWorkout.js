@@ -16,6 +16,7 @@ class NewWorkout extends Component {
     };
     axios.post(FIREBASE_URL, newWorkout).then((response) => {
       console.log(response);
+      // id of object we just created.. add fifth attribute to newWorkout object called Id
       newWorkout.id = response.data.name;
       this.props.newChild(newWorkout);
     }).catch((error) => {
@@ -30,7 +31,7 @@ class NewWorkout extends Component {
   }
   render() {
     return (
-      <Panel header="Add a new workout to your list!">
+      <Panel header="Add a new exercise to your list!">
         <Form horizontal>
          <FormGroup>
           <Col componentClass={ControlLabel} sm={2}>
