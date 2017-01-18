@@ -6,18 +6,20 @@ https://trello.com/b/OGsbA2Qm/workout-app
 To create a to do list of exercise items with broadly defined fields for daily workouts.
 
 ###### Approach:
-Bit off more I could chew by initially choosing to do routing with CRUD on both
-page displays. Realized this would be an issue when passing props 
-between the page displays became complicated. I refactored with the existing components I had. I kept the routing, but with a simple Quotes page that contained a simple array of quotes. 
-Using the Facebook documentation recommendation, I created a component for every box/display
-on the page. Knowing I save styling to the last minute, I used React Bootstrap which enabled me to map out the app effectively with pre-defined forms, buttons, etc.
+- Coupled wireframing with user stories before anything. Then setup the Firebase database.
+- Used Bookstrap to render out the containers. It was similar to wireframing inside the app and helped me visualize the necessary components. Facebook tutorial and documentation also assisted me
+in identifying component list and map. 
+- Refactored with the existing components I had after routing proved to be way over my head. I kept the routing, but with a simple Quotes page that contained a simple array of quotes. 
+- Knowing I usually  save styling to the last minute, I used React Bootstrap which enabled me to map out the app effectively with pre-defined forms, buttons, etc. 
+- First worked on the add, then render, then delete.
 
 ###### Technology used: 
 HTML, CSS, Javascript, React, React Bootstrap 
 
 ###### Improvements: 
-Did not complete the edit capability nor complete styling. Would like to add
-an API with motivational quotes to the Quotes page. Ideally, I would simplify my app but reducing the number of componenets. What amounted effectively to a to-do list became a bit more complicated.
+Bit off more I could chew by initially choosing to do routing with CRUD on both
+page displays realized this would be complicated when passing props between the page displays. Did not complete the edit capability nor complete styling. Would like to add
+an API with motivational quotes to the Quotes page. Ideally, I would simplify my app but reducing the number of componenets. What amounted effectively to a to-do list became a bit more complicated. 
 
 Jason John
 

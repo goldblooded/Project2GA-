@@ -4,8 +4,13 @@ import NewWorkout from './NewWorkout';
 import WorkoutList from './WorkoutList';
 import axios from 'axios';
 
+
+// main.js is not visible, it's the container/renderer and starting point for
+// all the workout CRUD functionality
+
 const FIREBASE_URL = 'https://workout-app-89f1f.firebaseio.com/.json'
 
+// on page load main workoutList is an empty array of objects, initial state
 class Main extends Component {
   constructor() {
     super();

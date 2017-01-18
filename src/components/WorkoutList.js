@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Well, Panel, ListGroup, ListGroupItem} from 'react-bootstrap';
 import Workout from './Workout';
 
+// initial state on first time page load is empty list
 class WorkoutList extends Component {
   constructor(props) {
     super(props);

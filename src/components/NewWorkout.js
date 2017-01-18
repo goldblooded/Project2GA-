@@ -16,16 +16,19 @@ class NewWorkout extends Component {
     };
     axios.post(FIREBASE_URL, newWorkout).then((response) => {
       console.log(response);
+      // id of object created; add fifth attribute to newWorkout object called Id
       newWorkout.id = response.data.name;
       this.props.newChild(newWorkout);
     }).catch((error) => {
       alert(error);
     });
-
+    // clear input fields
     this.title.value ="";
     this.duration.value="";
     this.intensity.value="";
     this.distance.value="";
+
+
 
   }
   render() {
