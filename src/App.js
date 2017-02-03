@@ -4,6 +4,8 @@ import Quotes from './components/Quotes';
 import Main from './components/Main';
 import Header from './components/Header';
 
+// entry point of app.. sets up routing
+
 class App extends Component {
   render() {
     return (
@@ -29,4 +31,3 @@ class App extends Component {
 }
 
 export default App;
-

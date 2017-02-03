@@ -1,6 +1,6 @@
 *Workout App*
 
-https://trello.com/b/OGsbA2Qm/workout-app
+http://signaller-mousedeer-88254.bitballoon.com/
 
 ###### Objective: 
 To create a to do list of exercise items with broadly defined fields for daily workouts.
@@ -19,9 +19,11 @@ HTML, CSS, Javascript, React, React Bootstrap
 ###### Improvements: 
 Bit off more I could chew by initially choosing to do routing with CRUD on both
 page displays realized this would be complicated when passing props between the page displays. Did not complete the edit capability nor complete styling. Would like to add
-an API with motivational quotes to the Quotes page. Ideally, I would simplify my app but reducing the number of componenets. What amounted effectively to a to-do list became a bit more complicated. 
+an API with motivational quotes to the Quotes page. Ideally, I would simplify my app by reducing and consolidating the number of componenets. What amounted effectively to a to-do list became a bit more complicated. 
 
 Jason John
+
+
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

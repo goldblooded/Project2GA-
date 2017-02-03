@@ -10,7 +10,8 @@ import axios from 'axios';
 
 const FIREBASE_URL = 'https://workout-app-89f1f.firebaseio.com/.json'
 
-// on page load main workoutList is an empty array of objects, initial state
+// on page load main workoutList is an empty array of objects from Firebase
+// (the new items inputted from add item item component NewItemWorkouot) initial state
 class Main extends Component {
   constructor() {
     super();
@@ -40,6 +41,8 @@ class Main extends Component {
     // render called again
   }
 
+  // render calls two components workoutLst (container for all list items)
+  // and NewWorkout (add workout)
   render() {
     return (
       <Grid>
@@ -58,4 +61,3 @@ class Main extends Component {
 }
 
 export default Main;
-

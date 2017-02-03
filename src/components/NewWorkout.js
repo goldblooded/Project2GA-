@@ -18,6 +18,7 @@ class NewWorkout extends Component {
       console.log(response);
       // id of object created; add fifth attribute to newWorkout object called Id
       newWorkout.id = response.data.name;
+      // passing props up to main.js
       this.props.newChild(newWorkout);
     }).catch((error) => {
       alert(error);
@@ -27,8 +28,6 @@ class NewWorkout extends Component {
     this.duration.value="";
     this.intensity.value="";
     this.distance.value="";
-
-
 
   }
   render() {
@@ -83,6 +82,3 @@ class NewWorkout extends Component {
 }
 
 export default NewWorkout;
-
-
-

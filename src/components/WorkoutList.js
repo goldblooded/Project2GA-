@@ -24,6 +24,8 @@ class WorkoutList extends Component {
     }
   }
 
+// everything returned that is not within te filter. new is array is what we set
+// state with which renders everything that has that id thus removing/deleting it (remainingChildren)
   deleteChild(deletedChildId) {
     let remainingChildren = this.state.children.filter((elem, i) => {
       return elem.id !== deletedChildId;
@@ -32,11 +34,13 @@ class WorkoutList extends Component {
     this.setState({children : remainingChildren});
   }
 
+// if there things to render it creates workout component for each item
+// if array length is equal to zero then prompt user to add a workout
   renderWorkoutComponent() {
     if (this.state.children.length === 0) {
       return (
         <Well>
-          <p> Looks like you haven't added any workout items, you lazy bum. </p>
+          <p> Looks like you have not added any workout items, you lazy bum. </p>
         </Well>
       );
     }
@@ -59,4 +63,3 @@ class WorkoutList extends Component {
 }
 
 export default WorkoutList;
-
